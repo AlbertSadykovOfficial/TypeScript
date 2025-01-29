@@ -113,7 +113,7 @@ type Protocol = {
 // Входные параметры - путь к скрипту с конкретным протоколом
 function createProtocol<P extends Protocol>(script: string) {
 	return <K extends keyof P>(command: K) => 
-		(...args: P[K]['in'] =>
+		((...args: P[K]['in']) =>
 			new Promise<P[K]['out']>((resolve, reject) => {
 				let worker = new Worker(script)
 				worker.onerror = reject
