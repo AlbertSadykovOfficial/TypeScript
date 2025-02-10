@@ -21,7 +21,7 @@ type APIResponse = {
 }
 
 type FriendList = APIResponse['user']['friendList']
-type Friend = FriendList['friends'][number] // Тип отдельного друга
+type Friend = FriendList['friends'][number] // Тип отдельного друга, number - индекс
 
 function renderFriendList(friendList: FriendList) {
   // ..
